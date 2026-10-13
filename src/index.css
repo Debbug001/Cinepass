@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-container-lowest: #0a0e17;
+  --color-surface-container-low: #181b25;
+  --color-surface-container: #1c1f29;
+  --color-surface-container-high: #262a34;
+  --color-surface-container-highest: #31353f;
+  --color-surface-variant: #31353f;
+  --color-background: #0f131c;
+  --color-surface: #0f131c;
+  --color-surface-bright: #353943;
+  --color-surface-dim: #0f131c;
+
+  --color-primary: #ffc174;
+  --color-primary-container: #f59e0b;
+  --color-on-primary: #472a00;
+  --color-on-primary-container: #613b00;
+  --color-primary-fixed: #ffddb8;
+  --color-primary-fixed-dim: #ffb95f;
+
+  --color-secondary: #ffb3ad;
+  --color-secondary-container: #a40217;
+  --color-on-secondary: #68000a;
+  --color-secondary-fixed: #ffdad7;
+  --color-secondary-fixed-dim: #ffb3ad;
+
+  --color-tertiary: #d5c3ff;
+  --color-tertiary-container: #bda2ff;
+  --color-on-tertiary: #3c0091;
+  --color-tertiary-fixed: #e9ddff;
+  --color-tertiary-fixed-dim: #d0bcff;
+
+  --color-outline: #a08e7a;
+  --color-outline-variant: #534434;
+  --color-on-surface: #dfe2ef;
+  --color-on-surface-variant: #d8c3ad;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-surface-container-lowest);
+    color: var(--color-on-surface);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glow-amber, .amber-glow {
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.40);
+}
+
+.glow-screen {
+  filter: drop-shadow(0 4px 14px rgba(245, 158, 11, 0.35));
+}
+
+.neon-border {
+  border: 1px solid rgba(245, 158, 11, 0.85);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35), inset 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+.subtle-glass {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ticket-cutout-left {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #0a0e17;
+  position: absolute;
+  left: -11px;
+  top: -11px;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.ticket-cutout-right {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #0a0e17;
+  position: absolute;
+  right: -11px;
+  top: -11px;
+  box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Responsive layout defaults: adapt naturally to phones, tablets, laptops and desktops. */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { width: 100%; min-width: 320px; -webkit-text-size-adjust: 100%; }
+  body { width: 100%; min-width: 320px; min-height: 100dvh; margin: 0; overflow-x: hidden; }
+  #root { width: 100%; min-height: 100dvh; }
+  img, video, canvas, svg { max-width: 100%; }
+  button, input, select, textarea { max-width: 100%; }
+}
+
+/* Keep the app usable in landscape phones and short laptop windows. */
+@media (max-height: 520px) and (orientation: landscape) {
+  body { min-height: 100vh; }
+}
